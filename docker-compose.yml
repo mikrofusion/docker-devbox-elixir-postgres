@@ -1,0 +1,15 @@
+version: '2'
+services:
+  web:
+    image: ${USER}/docker-devbox-elixir-postgres
+    volumes:
+      - "~/.ssh/id_rsa:/home/${USER}/.ssh/id_rsa"
+      - "~/.ssh/authorized_keys:/home/${USER}/.ssh/authorized_keys"
+      - "~/devbox:/home/${USER}/mount"
+    ports:
+      - "33322:22"
+      - "4000:4000"
+    depends_on:
+      - postgres
+  postgres:
+    image: postgres
