@@ -1,7 +1,7 @@
-FROM mikrofusion/docker-devbox-base
+FROM __user__/docker-devbox-base
 MAINTAINER Mike Groseclose <mike.groseclose@gmail.com>
 
-ARG user
+ARG user=__user__
 
 # install as root
 USER root
